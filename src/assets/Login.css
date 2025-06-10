@@ -7,22 +7,18 @@
 .login-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente */
   min-height: 100vh;
-  padding: 20px; /* Añade espacio alrededor */
-  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  font-family: Arial, sans-serif;
 }
 
 /* Header con fondo verde */
 .login-header {
   position: relative;
   height: 200px;
-  width: 100%; /* Ocupa todo el ancho */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  text-align: center; /* Centra el texto */
 }
 
 .background-image {
@@ -38,19 +34,21 @@
 }
 
 .login-header h1 {
-  font-size: 2rem;
+  position: relative;
+  z-index: 1;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Contenedor del formulario - modificado */
 .login-form-container {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  max-width: 400px; /* Pero no más de 400px */
-  margin: -50px auto 0; /* Centrado automático horizontal */
+  max-width: 400px;
+  width: 90%;
+  margin: -50px auto 2rem; /* Empuja el formulario hacia arriba */
   padding: 2rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .login-form {
@@ -101,4 +99,20 @@
   color: #4CAF50;
   text-decoration: none;
   font-weight: bold;
+}
+
+.error-message {
+  color: #ff4444;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 0.8rem;
 }

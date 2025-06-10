@@ -69,3 +69,45 @@
   text-decoration: none;
   font-weight: bold;
 }
+/* Estilos de validación */
+.error-message {
+  color: #ff4444;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.field-error {
+  color: #ff4444;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 5px;
+}
+
+.has-error input {
+  border-color: #ff4444 !important;
+}
+
+.password-requirements {
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.password-requirements span {
+  display: block;
+}
+
+.valid {
+  color: #4CAF50;
+}
+
+.invalid {
+  color: #ff4444;
+}
+
+.register-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
