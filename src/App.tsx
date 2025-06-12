@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
+import Settings from './components/Settings';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/numeros" element={<Numeros />} />
         <Route path="/familia" element={<Numeros />} />
         <Route path="/ubicaciones" element={<Numeros />} />*/}
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

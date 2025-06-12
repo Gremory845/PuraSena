@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         <Link to="/favoritos" className="nav-item">
           <img src="/fav.png" alt="Favoritos" />
         </Link>
-        <Link to="/opciones" className="nav-item">
+        <Link to="/settings" className="nav-item">
           <img src="/options.png" alt="Opciones" />
         </Link>
       </nav>
