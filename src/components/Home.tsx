@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../assets/Home.css';
+import ModuleData  from './ModuleData';
 
 // Datos para las cards
+/*
 const categories = [
-  { title: "Modales Básicos", count: "164 señas", path: "/modales-basicos" },
-  { title: "Nombres", count: "256 señas", path: "/nombres" },
-  { title: "Números", count: "50 señas", path: "/numeros" },
-  { title: "Familia", count: "50 señas", path: "/familia" },
-  { title: "Ubicaciones", count: "50 señas", path: "/ubicaciones" }
+  { title: "Presentación Personal", count: "164 señas", id: "presentacion-personal" },
+  { title: "Modales Básicos", count: "256 señas", id: "modales-basicos" },
+  { title: "Identidad y Comunidad", count: "50 señas", id: "identidad-comunidad" },
+  { title: "Números", count: "50 señas", id: "numeros" },
+  { title: "Tiempo", count: "50 señas", id: "tiempo" },
+  { title: "Lugares", count: "60 señas", id: "lugares" },
+  { title: "Familia y Relaciones", count: "60 señas", id: "familia-relaciones" },
+  { title: "Emociones", count: "60 señas", id: "emociones" },
+  { title: "Confirmaciones y negaciones", count: "60 señas", id: "confirmaciones-negaciones" },
 ];
+*/
 
 const Home: React.FC = () => {
   // Datos de ejemplo del usuario
@@ -35,21 +42,18 @@ const Home: React.FC = () => {
         </div>
       </header>
 
-      {/* Contenedor de cards en columna */}
-      <div className="categories-column">
-        {categories.map((category, index) => (
-          <Link 
-            to={category.path} 
-            key={index} 
-            className="category-card"
-          >
-            <div className="category-content">
-              <h3>{category.title}</h3>
-              <p>{category.count}</p>
-            </div>
-          </Link>
-        ))}
+  {/* Contenedor de cards en columna */}
+    <div className="categories-column">
+      {Object.values(ModuleData).map((category) => (
+        <Link to={`/module/${category.id}`} key={category.id} className="category-card">
+         <div className="category-content">
+            <h3>{category.title}</h3>
+            <p>{category.signCount} señas</p>
+         </div>
+        </Link>
+      ))}
       </div>
+
 
       {/* Navbar inferior */}
       <nav className="bottom-navbar">
