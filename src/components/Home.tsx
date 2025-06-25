@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/Home.css';
+import ModuleData  from './ModuleData';
 
 // Datos para las cards
+/*
 const categories = [
   { title: "Modales Básicos", count: "164 señas", path: "/modales-basicos" },
   { title: "Nombres", count: "256 señas", path: "/nombres" },
@@ -10,7 +12,7 @@ const categories = [
   { title: "Familia", count: "50 señas", path: "/familia" },
   { title: "Ubicaciones", count: "50 señas", path: "/ubicaciones" }
 ];
-
+*/
 const Home: React.FC = () => {
   // Datos de ejemplo del usuario
   const user = {
@@ -37,18 +39,14 @@ const Home: React.FC = () => {
 
       {/* Contenedor de cards en columna */}
       <div className="categories-column">
-        {categories.map((category, index) => (
-          <Link 
-            to={category.path} 
-            key={index} 
-            className="category-card"
-          >
-            <div className="category-content">
-              <h3>{category.title}</h3>
-              <p>{category.count}</p>
-            </div>
-          </Link>
-        ))}
+      {Object.values(ModuleData).map((category) => (
+        <Link to={`/module/${category.id}`} key={category.id} className="category-card">
+         <div className="category-content">
+            <h3>{category.title}</h3>
+            <p>{category.signCount} señas</p>
+         </div>
+        </Link>
+      ))}
       </div>
 
       {/* Navbar inferior */}
