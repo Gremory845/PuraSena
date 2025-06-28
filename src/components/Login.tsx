@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../assets/Login.css';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
