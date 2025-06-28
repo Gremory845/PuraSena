@@ -64,12 +64,17 @@ const Login: React.FC = () => {
 
   return (
     
-    <div className="login-page"> {/* Cambiamos el contenedor principal */}
-    <div className="login-header">
-      <div className="background-image"></div> {/* Fondo verde */}
-      <h1>Inicio de Sesión</h1>
-    </div>
-
+    <div className=" items-center justify-center min-h-screen bg-catskill-white-100"> {/* Cambiamos el contenedor principal */}
+    <div className="relative h-50 flex justify-center rounded-b-[40px] md:rounded-b-[60px] overflow-hidden mb-6">
+        {/* Fondo */}
+        <div className="absolute w-150 h-150 bg-[url('/bg.png')] bg-cover bg-center"></div>
+        
+        {/* Contenido visible encima del fondo */}
+        <div className="z-10 w-100 h-50 flex items-end justify-center ">
+          <h1 className="mb-11 text-white font-bold text-2xl bg-half-baked-300 px-2 rounded-full">Inicio de Sesión</h1>
+        </div>
+      </div>
+    
       <div className="max-w-sm w-[90%] p-8 mx-auto">
         <form onSubmit={handleLogin} className="flex flex-col gap-6">
 
