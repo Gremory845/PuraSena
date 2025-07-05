@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import lessonsData  from "./LessonsData";
+import lessonsData from "./LessonsData";
 import { type LessonItem } from "./LessonsData";
+import ReactPlayer from "react-player";
 
 const Lessons: React.FC = () => {
   const { id = "" } = useParams<{ id?: string }>();
@@ -27,25 +28,32 @@ const Lessons: React.FC = () => {
             {lesson.title}
           </h2>
 
-          <div className="rounded-full overflow-hidden shadow-md mb-15">
-            <video
-              src={lesson.videoUrl}
-              controls
-              className="w-500 rounded-xl"
-            />
+          <div className="rounded-md overflow-hidden shadow-md mb-15">
+            <div className="w-300 h-150">
+              <ReactPlayer
+                src={lesson.videoUrl}
+                controls
+                width="100%"
+                height="100%"
+                className=""
+              />
+            </div>
           </div>
 
-          <div className="w-full  p-4 mb-4">
+          <div className="w-full  p-4 mb-10">
             <h3 className="text-center text-lg font-semibold text-[#e86f61] pb-10">
               Vocabulario
             </h3>
             <div className="flex justify-center flex-wrap gap-4">
               {lesson.vocabulary.map((item) => (
-                <div key={item.word} className="flex flex-col items-center">
+                <div
+                  key={item.word}
+                  className="rounded-lg flex flex-col items-center "
+                >
                   <img
                     src={item.imageUrl}
                     alt={item.word}
-                    className="w-50 h-70 object-contain"
+                    className="w-50 h-70 object-contain rounded-full"
                   />
                   <span className="mt-2">{item.word}</span>
                 </div>
@@ -59,10 +67,10 @@ const Lessons: React.FC = () => {
             }`}
           >
             <div className="bg-white rounded-t-3xl p-4 shadow-lg h-[300px] overflow-auto">
-              <h3 className="text-center font-semibold mb-2 text-[#e86f61]">
-                
-              </h3>
-              <p className="text-[#e86f61] pt-10 text-center">{lesson?.transcription}</p>
+              <h3 className="text-center font-semibold mb-2 text-[#e86f61]"></h3>
+              <p className="text-[#e86f61] pt-10 text-center">
+                {lesson?.transcription}
+              </p>
             </div>
           </div>
 
@@ -72,7 +80,7 @@ const Lessons: React.FC = () => {
             }`}
             onClick={() => setShowTranscript(!showTranscript)}
           >
-            < img
+            <img
               src="/8.png"
               alt="Transcripción"
               className="w-16 h-16 rotate-90 cursor-pointer bg-white rounded-tl-4xl p-2 "
@@ -80,14 +88,8 @@ const Lessons: React.FC = () => {
           </button>
 
           <button className="absolute bottom-4 right-4">
-            <img
-              src="/8.png"
-              alt="Siguiente"
-              className="w-8 h-8 rotate-180"
-            />
+            <img src="/8.png" alt="Siguiente" className="w-8 h-8 rotate-180" />
           </button>
-
-          
         </>
       )}
     </div>
