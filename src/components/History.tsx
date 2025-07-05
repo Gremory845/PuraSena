@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import {  Link } from 'react-router-dom';
 
 const History: React.FC = () => {
-    const navigate = useNavigate();
 
     return(
         <div className="bg-catskill-white-100 min-h-screen">

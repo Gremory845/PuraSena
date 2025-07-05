@@ -128,9 +128,9 @@ const EditPerfil: React.FC = () => {
         </div>
 
       <div className="space-y-4 my-8 max-w-md mx-auto px-8">
-        {[ 'nombre', 'apellido', 'username' ].map((field, i) => (
+        {[ 'nombre', 'apellido', 'username' ].map((field) => (
           <div key={field} className="flex flex-col gap-2 justify-center">
-            <label htmlFor={field} className="text-sm font-bold text-lochinvar-500 pl-2 capitalize">{field === 'birthdate' ? 'Fecha de Nacimiento' : field}</label>
+            <label htmlFor={field} className="text-sm font-bold text-lochinvar-500 pl-2 capitalize">{field}</label>
             <input
               id={field}
               type="text"
