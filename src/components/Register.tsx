@@ -90,13 +90,19 @@ const Register: React.FC = () => {
   return (
     <div className=" items-center justify-center min-h-screen bg-catskill-white-100">
 
-      <div className="relative h-50 flex justify-center rounded-b-[40px] md:rounded-b-[60px] overflow-hidden mb-6">
-        {/* Fondo */}
-        <div className="absolute w-150 h-150 bg-[url('/bg.png')] bg-cover bg-center"></div>
-        
+      <div className="relative w-full h-[220px] overflow-hidden rounded-b-[40px] md:rounded-b-[60px] mb-6">
+        {/* Fondo con control total sobre el patrón */}
+        <img
+          src="/bg-menta.png"
+          alt="Fondo decorativo"
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[3500px] h-[1167px] object-cover"
+        />
+
         {/* Contenido visible encima del fondo */}
-        <div className="z-10 w-100 h-50 flex items-end justify-center ">
-          <h1 className="mb-11 text-white font-bold text-2xl bg-half-baked-300 px-2 rounded-full">Registro</h1>
+        <div className="relative z-10 flex items-end justify-center h-full">
+          <h1 className="mb-6 text-white font-bold text-2xl bg-half-baked-300 px-3 py-1 rounded-full">
+            Registro
+          </h1>
         </div>
       </div>
       
