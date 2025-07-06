@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/Settings.css';
 
 const Settings: React.FC = () => {
   const handleLogout = () => {

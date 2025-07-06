@@ -41,10 +41,29 @@ const Register: React.FC = () => {
     setFormData(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = async (e: React.FocusEvent<HTMLInputElement>) => {
     const { id } = e.target;
     setTouched(prev => ({ ...prev, [id]: true }));
+
+    if (id === "username" && formData.username.trim()) {
+      const existe = await checkUsuarioExiste(formData.username.trim());
+      if (existe) {
+        setErrors(prev => ({ ...prev, username: "Ese nombre de usuario ya está en uso" }));
+      }
+    }
   };
+
+  const checkUsuarioExiste = async (usuario: string) => {
+    try {
+      const res = await fetch(`http://localhost:8000/api/check-usuario/${usuario}`);
+      const data = await res.json();
+      return data.exists;
+    } catch (error) {
+      console.error("Error al verificar usuario:", error);
+      return false;
+    }
+  };
+
 
   const validateForm = () => {
     const newErrors = {
