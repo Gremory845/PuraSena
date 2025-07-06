@@ -23,12 +23,6 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/module/:id" element={<Module />} />
         <Route path="/lesson/:id" element={<Lessons />} />
-        {/* Otras rutas para las categorías
-        <Route path="/modales-basicos" element={<ModalesBasicos />} />
-        <Route path="/nombres" element={<Nombres />} />
-        <Route path="/numeros" element={<Numeros />} />
-        <Route path="/familia" element={<Numeros />} />
-        <Route path="/ubicaciones" element={<Numeros />} />*/}
         <Route path="/settings" element={<Settings />} />
         <Route path="/module/:id" element={<Module />} />
         <Route path="/lesson/:id" element={<Lessons />} />

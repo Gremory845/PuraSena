@@ -1,15 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/Home.css';
 import ModuleData  from './ModuleData';
+import{ useQuery } from '@tanstack/react-query';
+import { fetchUsers } from '../api/usersApi';
 
 
 const Home: React.FC = () => {
-  // Datos de ejemplo del usuario
-  const user = {
-    name: "Nombre del Usuario",
-    profileImage: "/panda.png" // Asegúrate de tener esta imagen en tu carpeta public
-  };
+
+  const { data: users, isLoading, error } = useQuery({
+    queryKey: ['users'],
+    queryFn: fetchUsers,
+  });
+  console.log(users, error);
+  const apiBaseUrl = "http://psbackend.test/";
+  const apiImageUrl = "/storage/users/";
+  if (isLoading) return <div>Cargando...</div>;
+  if (error) return <div>Error al cargar los usuarios</div>;
+
+const currentUser = users && users.length > 0
+  ? {
+      name: users[0].usuario,
+      image: users[0].image
+        ? `${apiBaseUrl}${apiImageUrl}${users[0].image}`
+        : "/panda.png",
+    }
+  : { name: "Usuario no encontrado", image: "/panda.png" };
 
   const categoryImages: Record<string, string> = {
   'presentacion-personal': '/presentacion.png',
@@ -23,7 +38,6 @@ const Home: React.FC = () => {
   'confirmaciones-negaciones': '/confirmacion.png'
   };
 
-
   return (
     <div className="flex flex-col min-h-screen p-5 bg-catskill-white-100">
       {/* Header de usuario */}
@@ -31,13 +45,13 @@ const Home: React.FC = () => {
         <div className="flex items-center gap-5 justify-between">
           <img 
           // imagen del api
-            src={user.profileImage} 
+            src={currentUser.image} 
             alt="Foto de perfil" 
             className="w-28 h-28 rounded-full object-cover"
           />
           <div className="text-2xl text-sunset-orange-500 m-1.5">
             <h1 className='font-bold text-right'>¡Hola!</h1>
-            <p className='text-right' >{user.name}</p>
+            <p className='text-right' >{currentUser.name}</p>
           </div>
         </div>
       </header>

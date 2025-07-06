@@ -11,7 +11,7 @@ export const lessonsData: Record<string, LessonItem> = {
     id: "abecedario",
     title: "Abecedario",
     videoUrl:
-      "https://www.youtube.com/watch?v=tQ0yjYUFKAE&list=RDm4_9TFeMfJE&index=4",
+      "https://www.youtube.com/watch?v=Vw069dT12wU",
     vocabulary: [
       { word: "A", imageUrl: "https://i.postimg.cc/sfZS9Jv2/B.png" },
       { word: "B", imageUrl: "https://i.postimg.cc/sfZS9Jv2/B.png" },
@@ -48,7 +48,7 @@ export const lessonsData: Record<string, LessonItem> = {
   deletreo: {
     id: "deletreo",
     title: "Deletreo de palabras simples",
-    videoUrl: "https://www.youtube.com/watch?v=lnGtCE66LQ8",
+    videoUrl: "https://www.youtube.com/watch?v=Vw069dT12wU",
     vocabulary: [
       { word: "A", imageUrl: "/vocab/holasena.png" },
       { word: "B", imageUrl: "/vocab/juan.png" },
@@ -67,7 +67,7 @@ export const lessonsData: Record<string, LessonItem> = {
   "deletreo-nombres": {
     id: "deletreo-nombres",
     title: "Deletreo de nombres propios",
-    videoUrl: "https://tu-servidor.com/videos/nombres-colores.mp4",
+    videoUrl: "https://www.youtube.com/watch?v=Vw069dT12wU",
     vocabulary: [
       { word: "A", imageUrl: "/vocab/holasena.png" },
       { word: "B", imageUrl: "/vocab/juan.png" },
