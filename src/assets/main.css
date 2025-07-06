@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @theme{
     --color-catskill-white-50: #f6f9f9;
     --color-catskill-white-100: #ebf1f2;
@@ -73,6 +74,18 @@
     --color-elephant-900: #035477;
     --color-elephant-950: #023047;
 
+
+    --color-skeptic-50: #f3faf7;
+    --color-skeptic-100: #ceede2;
+    --color-skeptic-200: #aee1d0;
+    --color-skeptic-300: #7ecab3;
+    --color-skeptic-400: #53ae95;
+    --color-skeptic-500: #3a927c;
+    --color-skeptic-600: #2c7565;
+    --color-skeptic-700: #275e52;
+    --color-skeptic-800: #234c44;
+    --color-skeptic-900: #21403a;
+    --color-skeptic-950: #0e2522;
 
 
 

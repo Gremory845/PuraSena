@@ -78,7 +78,7 @@ const Lessons: React.FC = () => {
             }`}
             onClick={() => setShowTranscript(!showTranscript)}
           >
-            <img
+            < img
               src="/8.png"
               alt="Transcripción"
               className="w-16 h-16 rotate-90 cursor-pointer bg-white rounded-tl-4xl p-2 "
@@ -86,8 +86,14 @@ const Lessons: React.FC = () => {
           </button>
 
           <button className="absolute bottom-4 right-4">
-            <img src="/8.png" alt="Siguiente" className="w-8 h-8 rotate-180" />
+            <img
+              src="/8.png"
+              alt="Siguiente"
+              className="w-8 h-8 rotate-180"
+            />
           </button>
+
+          
         </>
       )}
     </div>
