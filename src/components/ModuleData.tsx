@@ -51,8 +51,7 @@ const moduleData: Record<string, ModuleItem> = {
     signCount: 50,
     level: 90,
     subcategories: [
-      { id: "numeros-1-10", title: "Números del 1 al 10", count: 35 },
-      { id: "numeros-11-20", title: "Números del 11 al 20", count: 7 },
+      { id: "numeros-1-20", title: "Números del 1 al 20", count: 7 },
       { id: "numeros-generales", title: "Numeros generales", count: 125 },
       { id: "edad", title: "Seña para decir edad", count: 10 },
     ]

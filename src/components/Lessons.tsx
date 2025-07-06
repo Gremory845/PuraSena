@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactPlayer from "react-player";
 import { useParams, useNavigate } from "react-router-dom";
 import { lessonsData } from "./LessonsData";
 import { type LessonItem } from "./LessonsData";
@@ -8,8 +9,6 @@ const Lessons: React.FC = () => {
   const navigate = useNavigate();
   const lesson: LessonItem | undefined = lessonsData[id];
   const [showTranscript, setShowTranscript] = useState(false);
-  console.log("ID recibido:", id);
-  console.log("Lecciones disponibles:", Object.keys(lessonsData));
 
   if (!id || !lesson) {
     return <div>Lección no encontrada</div>;
@@ -27,19 +26,21 @@ const Lessons: React.FC = () => {
             {lesson.title}
           </h2>
 
-          <div className="rounded-full overflow-hidden shadow-md mb-15">
-            <video
+          <div className="rounded-md overflow-hidden shadow-md mb-15 ">
+            <ReactPlayer
               src={lesson.videoUrl}
+              className="w-full h-200"
+              width="80rem"
+              height="600px"
               controls
-              className="w-500 rounded-xl"
             />
           </div>
 
-          <div className="w-full  p-4 mb-4">
-            <h3 className="text-center text-lg font-semibold text-[#e86f61] pb-10">
+          <div className="w-full  p-4 mb-10">
+            <h3 className="text-center text-lg font-semibold text-[#e86f61] pb-12">
               Vocabulario
             </h3>
-            <div className="flex justify-center flex-wrap gap-4">
+            <div className="flex justify-center flex-wrap gap-4 ">
               {lesson.vocabulary.map((item) => (
                 <div key={item.word} className="flex flex-col items-center">
                   <img
@@ -60,9 +61,14 @@ const Lessons: React.FC = () => {
           >
             <div className="bg-white rounded-t-3xl p-4 shadow-lg h-[300px] overflow-auto">
               <h3 className="text-center font-semibold mb-2 text-[#e86f61]">
-                
+                Transcripción
               </h3>
-              <p className="text-[#e86f61] pt-10 text-center">{lesson?.transcription}</p>
+              <p
+                className="text-[#e86f61] pt-10 text-center pl-12 pr-12"
+                style={{ whiteSpace: "pre-line" }}
+              >
+                {lesson?.transcription}
+              </p>
             </div>
           </div>
 
@@ -72,7 +78,7 @@ const Lessons: React.FC = () => {
             }`}
             onClick={() => setShowTranscript(!showTranscript)}
           >
-            < img
+            <img
               src="/8.png"
               alt="Transcripción"
               className="w-16 h-16 rotate-90 cursor-pointer bg-white rounded-tl-4xl p-2 "
@@ -80,14 +86,8 @@ const Lessons: React.FC = () => {
           </button>
 
           <button className="absolute bottom-4 right-4">
-            <img
-              src="/8.png"
-              alt="Siguiente"
-              className="w-8 h-8 rotate-180"
-            />
+            <img src="/8.png" alt="Siguiente" className="w-8 h-8 rotate-180" />
           </button>
-
-          
         </>
       )}
     </div>

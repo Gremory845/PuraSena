@@ -31,6 +31,7 @@ const Home: React.FC = () => {
       <header className="user-header">
         <div className="profile-container">
           <img 
+          // imagen del api
             src={user.profileImage} 
             alt="Foto de perfil" 
             className="profile-image"
